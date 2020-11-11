@@ -1,23 +1,32 @@
-# Trabalho CAP. 6 e 7 Clean Code - UNISEP
-Trabalho sobre tratamento de erros e limites, seguindo o livro Clean Code
+# Trabalho sobre Clean Code - UNISEP
+Esse trabalho foi realizado com o intuito de aplicar em Ruby os conseitos apresentados nos capitulos 7 e 8 do livro Clean Code de Robert C. Martin
 
-Utilizando a linguagem Ruby
+Autores: André Prolo e Marco Antônio
 
-## Tratamento de Erros
+Mostraremos alguns exemplos de boas práticas apresentadas no livro. Lembrando que o livro utiliza a linguagem Java como base, então criamos nossos próximos exemplos ataptados para a linguagem Ruby.
 
-Um jeito de escrever código limpo e robusto, que trata erros com elegancia e estilo.
+## Tratamento de Erros - Capitulo 7
 
-### 1. Usar begin rescue no lugar de if e else
+"Um jeito de escrever código limpo e robusto, que trata erros com elegancia e estilo." - Frase do livro
+
+O objetivo desse capitulo é apresentar algumas boas práticas no tratamento de erros dos seus códigos.
+
+### 1. Usar ```begin rescue``` no lugar de if e else
+
+Essa é a primeira boa pática, evitar o uso de if e else para tratamento de erros. Pois em situações complexas, o código fica extramamente confuso e nada clean. Por isso é importante conhecer o recurso de tratamento de erros do Ruby, o ```begin rescue```.
 
 Ruim: 
-
 Usando if e else para tratar erros
 ```
-x = nil
 if (x != nil)
   x.length
+  if (y != nil)
+    y.length
+  else
+    puts "Houve um erro"
+  end
 else
-  puts "erro!!!"
+  puts "Houve um erro"
 end
 ```
 
@@ -25,9 +34,9 @@ Bom:
 Utilizar o begin rescue para tratar o possível erro
 
 ```
-x = nil
 begin
   x.length
+  y.length 
 rescue
   puts "Houve um erro"
 end
