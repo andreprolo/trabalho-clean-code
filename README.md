@@ -15,8 +15,7 @@ O objetivo desse capitulo é apresentar algumas boas práticas no tratamento de 
 
 Essa é a primeira boa pática, evitar o uso de if e else para tratamento de erros. Pois em situações complexas, o código fica extramamente confuso e nada clean. Por isso é importante conhecer o recurso de tratamento de erros do Ruby, o ```begin rescue```.
 
-Ruim: 
-Usando if e else para tratar erros
+:warning: Ruim: Usando if e else para tratar erros
 ```
 if (x != nil)
   x.length
@@ -30,8 +29,7 @@ else
 end
 ```
 
-Bom:
-Utilizar o begin rescue para tratar o possível erro
+:heavy_check_mark: Bom: Utilizando o ```begin rescue``` para tratar erros
 
 ```
 begin
@@ -44,7 +42,10 @@ end
 
 ### 2. Sempre criar mensagens de erro informativas
 
+É importante criar mensagens de erro informativas e com um contexto bem definido de onde o erro ocorreu e porque ocorreu.
+
 Considera a seguinte função:
+(ela dispara um erro caso a divisão seja por zero)
 ```
 def dividir(x, y)
   raise StandardError.new "Divisão por zero" if y == 0
@@ -52,7 +53,7 @@ def dividir(x, y)
 end
 ```
 
-Ruim:
+:warning: Ruim:
 Mensagem sem contexto:
 
 ```
@@ -62,8 +63,12 @@ rescue
   puts "Deu erro"
 end
 ```
+ouput:
+```
+Deu erro
+```
 
-Bom:
+:heavy_check_mark: Bom:
 Mensagem com contexto, e informativa a respeito do erro:
 
 ```
@@ -73,11 +78,17 @@ rescue StandardError => e
   puts "Erro ao dividir: #{e.message}"
 end
 ```
+output:
+```
+Erro ao dividir: Divisão por zero
+```
 
 ### 3. Abstrair erros em uma classe separada
 
-Ruim: 
-Tratar diversos erros
+Essa boa prática se aplica principalmente na utilização de APIs de terceiros. Consiste-se em isolar a lógica de tratamento de erros em uma classe, dessa forma o seu código não fica completamente dependendo do fluxo definido pela API de terceiros, você mesmo consegue adaptar o tratamento de erros e padroniza-lo com a sua aplicação.
+
+> O exemplo abaixo utiliza o IO do Ruby para abrir um arquivo, seguimos a documentação para ver os possíveis retornos de erro
+:warning: Ruim: Tratar diversos erros diretamente, sem isolar a lógica
 
 ```
 begin
@@ -93,10 +104,8 @@ rescue Errno::EBUSY
 end
 ```
 
-Bom:
-Encapsular casos em uma classe
+:heavy_check_mark: Bom: Isolar o tratamento de erros em uma classe
 
-Resultado de usar uma classe para abstrair os erros:
 ```
 arquivo = Arquivo.new
 
@@ -108,7 +117,6 @@ end
 ```
 
 Classe com os erros tratados:
-
 ```
 class Arquivo
   def abrir
@@ -126,3 +134,4 @@ class Arquivo
   end
 end
 ```
+Note que nessa classe é possível padronizar todos os erros, dando uma flexibilidade muito maior no tratamento, e deixando ele moldado para os padrões da sua aplicação.
