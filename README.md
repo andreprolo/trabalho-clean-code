@@ -1,5 +1,5 @@
 # Trabalho CAP. 6 e 7 Clean Code - UNISEP
-Trabalho sobre tratamento de erros e limites,seguindo o livro Clean Code
+Trabalho sobre tratamento de erros e limites, seguindo o livro Clean Code
 
 Utilizando a linguagem Ruby
 
@@ -7,7 +7,7 @@ Utilizando a linguagem Ruby
 
 Um jeito de escrever código limpo e robusto, que trata erros com elegancia e estilo.
 
-### 1) Usar begin rescue no lugar de if e else
+### 1. Usar begin rescue no lugar de if e else
 
 Ruim: 
 
@@ -33,7 +33,7 @@ rescue
 end
 ```
 
-2) Sempre criar mensagens de erro informativas
+### 2. Sempre criar mensagens de erro informativas
 
 Considera a seguinte função:
 ```
@@ -65,7 +65,7 @@ rescue StandardError => e
 end
 ```
 
-3) Abstrair erros em uma classe separada
+### 3. Abstrair erros em uma classe separada
 
 Ruim: 
 Tratar diversos erros
