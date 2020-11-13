@@ -1,7 +1,6 @@
 # Trabalho sobre Clean Code - UNISEP
 Esse trabalho foi realizado com o intuito de aplicar em Ruby os conseitos apresentados nos capitulos 7 e 8 do livro "Clean Code" de Martin
 Robert C.
-Autores: André Prolo e Marco Antonio
 
 Mostraremos alguns exemplos de boas práticas apresentadas no livro. Lembrando que o livro utiliza a linguagem Java como base, então criamos nossos próximos exemplos ataptados para a linguagem Ruby.
 
@@ -193,3 +192,5 @@ log.error("Não foi possível conectar com o banco de dados")
 Explicação: Esse é o caso ideal, pois criamos a classe Log, com a utilização da gem ```logger``` encapsulada nela. Isso é bom porque limitamos a forma como dependemos do código tercerizado, pois caso a gem sofra alguma alteração, teremos apenas um único lugar para corrigir, e isso refletirá em toda a nossa aplicação. Outro detalhe é que ganhamos flexibilidade, pois podemos ajustar a forma como interagimos com a gem.
 
 Fim.
+
+Autores: André Prolo e Marco Antonio
