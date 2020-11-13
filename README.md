@@ -136,3 +136,60 @@ class Arquivo
 end
 ```
 Note que nessa classe é possível padronizar todos os erros, dando uma flexibilidade muito maior no tratamento, e deixando ele moldado para os padrões da sua aplicação.
+
+
+## Limites - Capítulo 8
+O objetivo desse capítulo é apresentar boas práticas para manter limpos os limetes de nosso software, principalmente durante a utilização de códigos de terceiros.
+
+Para esse capítulo, traremos apenas um exemplo, que demonstra como podemos melhorar a utilização de códigos tercerizados.
+
+Utilizaremos a gem ```logger``` para a demonstração. (https://github.com/ruby/logger)
+
+:warning: Caso ruim:
+```
+require 'logger'
+
+log = Logger.new(STDOUT)
+log.debug("hello")
+
+log.info("Program finished")
+
+log_error = Logger.new(STDERR)
+log.error("erro")
+```
+Explicação: O problema de seguir essa implementação, é que nossa aplicação fica completamente dependente da forma como o código está implementado na gem, caso futuramente a gem sofra alterações (por exemplo, mudanças de nomenclatura) nosso código quebraria em vários lugares, e teriamos que ajustá-los um por um.
+
+:heavly_check: Caso bom:
+```
+require 'logger'
+
+class Log
+  def initialize
+    @log = nil
+  end
+
+  def debug(string)
+    @log = Logger.new(STDOUT)
+    @log.debug(string)
+  end
+
+  def info(string)
+    @log = Logger.new(STDOUT)
+    @log.info(string)
+  end
+
+  def error(string)
+    @log = Logger.new(STDERR)
+    @log.error(string)
+  end
+end
+
+log = Log.new
+
+log.debug("valor da variavel x é 2")
+log.info("Sistema em Execução")
+log.error("Não foi possível conectar com o banco de dados")
+```
+Explicação: Esse é o caso ideal, pois criamos a classe Log, com a utilização da gem ```logger``` encapsulada nela. Isso é bom porque limitamos a forma como dependemos do código tercerizado, pois caso a gem sofra alguma alteração, teremos apenas um único lugar para corrigir, e isso refletirá em toda a nossa aplicação. Outro detalhe é que ganhamos flexibilidade, pois podemos ajustar a forma como interagimos com a gem.
+
+Fim.
