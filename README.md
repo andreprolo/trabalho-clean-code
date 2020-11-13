@@ -88,6 +88,7 @@ Erro ao dividir: Divisão por zero
 Essa boa prática se aplica principalmente na utilização de APIs de terceiros. Consiste-se em isolar a lógica de tratamento de erros em uma classe, dessa forma o seu código não fica completamente dependendo do fluxo definido pela API de terceiros, você mesmo consegue adaptar o tratamento de erros e padroniza-lo com a sua aplicação.
 
 > O exemplo abaixo utiliza o IO do Ruby para abrir um arquivo, seguimos a documentação para ver os possíveis retornos de erro
+
 :warning: Ruim: Tratar diversos erros diretamente, sem isolar a lógica
 
 ```
