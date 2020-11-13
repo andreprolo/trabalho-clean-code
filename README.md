@@ -1,7 +1,7 @@
 # Trabalho sobre Clean Code - UNISEP
-Esse trabalho foi realizado com o intuito de aplicar em Ruby os conseitos apresentados nos capitulos 7 e 8 do livro Clean Code de Robert C. Martin
-
-Autores: André Prolo e Marco Antônio
+Esse trabalho foi realizado com o intuito de aplicar em Ruby os conseitos apresentados nos capitulos 7 e 8 do livro "Clean Code" de Martin
+Robert C.
+Autores: André Prolo e Marco Antonio
 
 Mostraremos alguns exemplos de boas práticas apresentadas no livro. Lembrando que o livro utiliza a linguagem Java como base, então criamos nossos próximos exemplos ataptados para a linguagem Ruby.
 
@@ -9,13 +9,13 @@ Mostraremos alguns exemplos de boas práticas apresentadas no livro. Lembrando q
 
 "Um jeito de escrever código limpo e robusto, que trata erros com elegancia e estilo." - Frase do livro
 
-O objetivo desse capitulo é apresentar algumas boas práticas no tratamento de erros dos seus códigos.
+O objetivo desse capítulo é apresentar algumas boas práticas no tratamento de erros dos seus códigos.
 
 ### 1. Usar ```begin rescue``` no lugar de if e else
 
-Essa é a primeira boa pática, evitar o uso de if e else para tratamento de erros. Pois em situações complexas, o código fica extramamente confuso e nada clean. Por isso é importante conhecer o recurso de tratamento de erros do Ruby, o ```begin rescue```.
+Essa é a primeira boa pática, evitar o uso de if e else para tratamento de erros. Pois em situações complexas, o código fica extremamente confuso e nada clean. Por isso é importante conhecer o recurso de tratamento de erros do Ruby, o ```begin rescue```.
 
-:warning: Ruim: Usando if e else para tratar erros
+:warning: Ruim: Usando ```if e else``` para tratar erros
 ```
 if (x != nil)
   x.length
@@ -42,7 +42,7 @@ end
 
 ### 2. Sempre criar mensagens de erro informativas
 
-É importante criar mensagens de erro informativas e com um contexto bem definido de onde o erro ocorreu e porque ocorreu.
+É importante criar mensagens de erro informativas e com um contexto bem definido de onde o erro ocorreu e por que ocorreu.
 
 Considera a seguinte função:
 (ela dispara um erro caso a divisão seja por zero)
