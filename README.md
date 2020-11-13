@@ -159,7 +159,7 @@ log.error("erro")
 ```
 Explicação: O problema de seguir essa implementação, é que nossa aplicação fica completamente dependente da forma como o código está implementado na gem, caso futuramente a gem sofra alterações (por exemplo, mudanças de nomenclatura) nosso código quebraria em vários lugares, e teriamos que ajustá-los um por um.
 
-:heavly_check: Caso bom:
+:heavy_check_mark: Caso bom:
 ```
 require 'logger'
 
