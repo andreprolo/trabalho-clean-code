@@ -2,7 +2,9 @@
 Esse trabalho foi realizado com o intuito de aplicar em Ruby os conseitos apresentados nos capitulos 7 e 8 do livro "Clean Code" de Martin
 Robert C.
 
-Mostraremos alguns exemplos de boas práticas apresentadas no livro. Lembrando que o livro utiliza a linguagem Java como base, então criamos nossos próximos exemplos ataptados para a linguagem Ruby.
+Mostraremos alguns exemplos de boas práticas apresentadas no livro. 
+
+> Lembrando que o livro utiliza a linguagem Java como base, então criamos nossos próximos exemplos ataptados para a linguagem Ruby.
 
 ## Tratamento de Erros - Capitulo 7
 
