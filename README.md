@@ -64,7 +64,7 @@ rescue
   puts "Deu erro"
 end
 ```
-ouput:
+output:
 ```
 Deu erro
 ```
@@ -191,7 +191,7 @@ log.debug("valor da variavel x é 2")
 log.info("Sistema em Execução")
 log.error("Não foi possível conectar com o banco de dados")
 ```
-Explicação: Esse é o caso ideal, pois criamos a classe Log, com a utilização da gem ```logger``` encapsulada nela. Isso é bom porque limitamos a forma como dependemos do código tercerizado, pois caso a gem sofra alguma alteração, teremos apenas um único lugar para corrigir, e isso refletirá em toda a nossa aplicação. Outro detalhe é que ganhamos flexibilidade, pois podemos ajustar a forma como interagimos com a gem.
+Explicação: Esse é o caso ideal, pois criamos a classe Log, com a utilização da gem ```logger``` encapsulada nela. Isso é bom porque limitamos a forma como dependemos do código tercerizado, pois caso a gem sofra alguma alteração, teremos apenas um único lugar para corrigir, e isso refletirá em toda a nossa aplicação. Outro detalhe é que ganhamos flexibilidade, pois podemos ajustar a forma como interagimos com a gem e moldá-la de acordo com os padrões da nossa aplicação.
 
 Fim.
 
