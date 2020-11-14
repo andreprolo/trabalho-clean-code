@@ -45,14 +45,14 @@ end
 
 É importante criar mensagens de erro informativas e com um contexto bem definido de onde o erro ocorreu e por que ocorreu.
 
-Considera a seguinte função:
-(ela dispara um erro caso a divisão seja por zero)
+Considere a seguinte função:
 ```
 def dividir(x, y)
   raise StandardError.new "Divisão por zero" if y == 0
   return x / y
 end
 ```
+( Note que ela dispara um erro caso a divisão seja por zero )
 
 :warning: Ruim:
 Mensagem sem contexto:
