@@ -140,7 +140,7 @@ Note que nessa classe é possível padronizar todos os erros, dando uma flexibil
 
 
 ## Limites - Capítulo 8
-O objetivo desse capítulo é apresentar boas práticas para manter limpos os limetes de nosso software, principalmente durante a utilização de códigos de terceiros.
+O objetivo desse capítulo é apresentar boas práticas para manter limpos os limites de nosso software, principalmente durante a utilização de códigos de terceiros.
 
 Para esse capítulo, traremos apenas um exemplo, que demonstra como podemos melhorar a utilização de códigos tercerizados.
 
@@ -158,7 +158,7 @@ log.info("Program finished")
 log_error = Logger.new(STDERR)
 log.error("erro")
 ```
-Explicação: O problema de seguir essa implementação, é que nossa aplicação fica completamente dependente da forma como o código está implementado na gem, caso futuramente a gem sofra alterações (por exemplo, mudanças de nomenclatura) nosso código quebraria em vários lugares, e teriamos que ajustá-los um por um.
+Explicação: O problema de seguir essa implementação, é que nossa aplicação fica completamente dependente da forma como o código está implementado na gem, caso futuramente a gem sofra alterações (por exemplo, mudanças de nomenclatura, etc...) nosso código quebraria em vários lugares, e teriamos que ajustá-los um por um.
 
 :heavy_check_mark: Caso bom:
 ```
