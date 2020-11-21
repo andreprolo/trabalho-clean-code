@@ -1,6 +1,5 @@
 # Trabalho sobre Clean Code - UNISEP
-Esse trabalho foi realizado com o intuito de aplicar em Ruby os conseitos apresentados nos capitulos 7 e 8 do livro "Clean Code" de Martin
-Robert C.
+Esse trabalho foi realizado com o intuito de aplicar em Ruby os conseitos apresentados nos capitulos 7 e 8 do livro "Clean Code" de Robert Cecil Martin.
 
 Mostraremos alguns exemplos de boas práticas apresentadas no livro. 
 
